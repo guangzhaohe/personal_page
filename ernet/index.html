@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ERNet: Efficient Non-Rigid Registration Network for Point Sequences.">
+  <meta name="keywords" content="ERNet, 3D Tracking, Point Cloud Registration">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERNet: Efficient Non-Rigid Registration Network for Point Sequences</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616408.png" type="image/png">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ERNet: Efficient Non-Rigid Registration Network for Point Sequences</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://guangzhaohe.com">Guangzhao He</a>,</span>
+            <span class="author-block">
+              <a href="https://henry123-boy.github.io/">Yuxi Xiao</a>,</span>
+            <span class="author-block">
+              <a href="https://zhenx.me/">Zhen Xu</a>,</span>
+            <span class="author-block">
+              <a href="https://www.xzhou.me/">Xiaowei Zhou</a>,</span>
+            <span class="author-block">
+              <a href="https://pengsida.net/">Sida Peng</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Zhejiang University</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ICCV 2025</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/ernet_paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://guangzhaohe.com/ernet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://guangzhaohe.com/ernet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img 
+        id="teaser" 
+        src="./static/images/ernet_teaser.png" 
+        alt="ERNet Teaser" 
+        style="display: block; margin: 0 auto 20px auto; width:90%; height:auto;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">ERNet</span> efficiently and accurately predicts feed-forward registrations given a source object and a sequence of sparse or partial point clouds.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Registering an object shape to a sequence of point clouds
+            undergoing non-rigid deformation is a long-standing challenge. 
+            The key difficulties stem from two factors: (i) the
+            presence of local minima due to the non-convexity of registration 
+            objectives, especially under noisy or partial inputs,
+            which hinders accurate and robust deformation estimation,
+            and (ii) error accumulation over long sequences, leading
+            to tracking failures. 
+          </p>
+            
+          <p>
+            To address these challenges, we propose to adopt a scalable 
+            data-driven approach and propose <span class="dnerf">ERNet</span>, 
+            an efficient feed-forward model trained on large deformation datasets.
+            It is designed to handle noisy and partial
+            inputs while effectively leveraging temporal information for
+            accurate and consistent sequential registration. 
+            The key to our design is predicting a sequence of deformation graphs
+            through a two-stage pipeline, which first estimates frame-wise 
+            coarse graph nodes for robust initialization, before
+            refining their trajectories over time in a sliding-window fashion. 
+          </p>
+
+          <p>
+            Extensive experiments show that our proposed approach 
+            (i) outperforms previous state-of-the-art on both DeformingThings4D 
+            and D-FAUST datasets, and (ii) achieves more
+            than 4x speedup compared to the previous best, offering
+            significant efficiency improvement.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered" style="margin-bottom: 50px;">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+          <img 
+            id="method" 
+            src="./static/images/ernet_pipeline.png" 
+            alt="ERNet Method" 
+            style="display: block; margin: 0 auto 20px auto; width:100%; height:auto;">
+          <div class="content has-text-justified">
+            <p>
+              <b>(a)</b> Given a source point cloud and input target point cloud sequence, <span class="dnerf">ERNet</span> first encodes them independently using a shared local feature encoder and splat per-point features onto Tri-plane grids.
+            </p>
+            <p>
+              <b>(b)</b> Deformation graph nodes are initialized based on the source point cloud and coarse-to-fine matching is performed to predict node positions and radii using encoded features.
+            </p>
+            <p>
+              <b>(c)</b> With the predicted node trajectories and radii, node transformations are computed via Procrustes Analysis and dense registration is produced using RBF-based LBS.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+    <!-- Comparison. -->
+    <div class="columns is-centered" style="margin-bottom: 50px;">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Registration Results</h2>
+          <img 
+            id="method" 
+            src="./static/images/ernet_comparison.png" 
+            alt="ERNet Method" 
+            style="display: block; margin: 0 auto 20px auto; width:100%; height:auto;">
+          <div class="content has-text-justified">
+            <p>
+              Qualitative comparison results on two challenging examples from partial D-FAUST and DT4D-A datasets.
+              The point color reflects the L2 distance from ground truth, where blue indicates less error and red indicates more.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!-- / Comparison. -->
+
+    <!-- Results. -->
+    <div class="columns is-centered" style="margin-bottom: 50px;">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Registration Results</h2>
+          <img 
+            id="method" 
+            src="./static/images/ernet_results.png" 
+            alt="ERNet Method" 
+            style="display: block; margin: 0 auto 20px auto; width:100%; height:auto;">
+          <div class="content has-text-justified">
+            <p>
+              Additional qualitative results from D-FAUST and DT4D-A datasets. The error heatmap ranges from 0 to 0.4, with 0 indicating perfect registration and 0.4 indicating the worst.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!-- / Results. -->
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{he2025ernet,
+  author    = {He, Guangzhao and Xiao, Yuxi and Xu, Zhen and Zhou, Xiaowei and Peng, Sida},
+  title     = {ERNet: Efficient Non-Rigid Registration Network for Point Sequences},
+  journal   = {ICCV},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/ernet_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow and modify the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website as long as you link back to the <a href="https://nerfies.github.io/">NeRFies</a> page in the footer.
+          </p>
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
