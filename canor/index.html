@@ -19,13 +19,11 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <!-- <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet" /> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma.min.css">
   <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-slider.min.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
   <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/index.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="style.css">
@@ -36,13 +34,9 @@
   <script src="https://chen-geng.com/rose4d/static/js/select.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  
-  <!-- import { unzipSync, strFromU8 } from 'https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js'; -->
+
   <script type="module" src="https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js"></script>
 
-  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest/dist/model-viewer.js"></script> -->
-  <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
-  <!-- <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script> -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 
@@ -60,14 +54,12 @@
     </div>
 
     <!-- For PC and desktop devices -->
-    <!-- <section class="hero hero-cover-desktop is-link is-hidden-touch is-fullheight video" style="overflow: hidden; position:relative;" id="cover"> -->
-    <div class="section hero  is-link is-fullheight video"
-      style="overflow: hidden; position:relative;" id="cover">
+    <div class="section hero  is-link is-fullheight video" style="overflow: hidden; position:relative;" id="cover">
 
       <!-- Teaser video -->
-      <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw; background-color: black; left: unset; right: unset; display: unset;">
+      <div class="hero-video"
+        style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw; background-color: black; left: unset; right: unset; display: unset;">
         <video playsinline autoplay muted loop>
-          <!-- <source src="assets/videos/teaser_video_fade.mp4" type="video/mp4"> -->
           <source src="assets/videos/teaser_video_slide.mp4" type="video/mp4">
         </video>
       </div>
@@ -109,26 +101,15 @@
       <!--  Hero content: will be in the middle -->
       <div class="hero-body" style="max-width: 100%; width: 100%;">
         <div class="container has-text-centered" style="max-width: 100%; width: 100%;">
-          <!-- <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 7vw; line-height: 1.1;">
-            <i id="changing-icon" class="myfont"></i>
-            <span style="
-              background: linear-gradient(90deg, #ff6ec4, #7873f5);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              display: inline-block;
-              padding-bottom: 0.1em;
-              white-space: nowrap;">
-              Category-Agnostic
-            </span><br>
-            <span style="white-space: nowrap;">Neural Object Rigging</span>
-          </h1> -->
-          
-          <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 7vw; line-height: 1.1; text-align: center; width: 100%; max-width: 100%;">
+
+          <h1 class="title is-1 publication-title is-size-1-mobile"
+            style="font-size: 7vw; line-height: 1.1; text-align: center; width: 100%; max-width: 100%;">
             <div style="display: inline-block;">
               <i id="changing-icon" class="myfont"></i>
               <span style="
                 background: linear-gradient(90deg, #ff6ec4, #7873f5);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
                 display: inline-block;
                 padding-bottom: 0.1em;">
@@ -138,25 +119,27 @@
             </div>
           </h1>
 
-          <h1 class="subtitle is-1 is-size-4-mobile publication-title myfont" style="padding-top: 10vh; font-size: 2.5vw;">
+          <h1 class="subtitle is-1 is-size-4-mobile publication-title myfont"
+            style="padding-top: 10vh; font-size: 2.5vw;">
             CVPR 2025
           </h1>
           <h1 class="is-2 is-size-4-mobile" style="font-size: 2.5vw; opacity: 100%;">
             <span class="myfont">
-              <a href="https://guangzhaohe.com">Guangzhao He<sup class="is-size-6-mobile">1*</sup></a>, 
-            </span> 
+              <a href="https://guangzhaohe.com">Guangzhao He<sup class="is-size-6-mobile">1*</sup></a>,
+            </span>
             <span class="myfont">
-              <a href="https://chen-geng.com">Chen Geng<sup class="is-size-6-mobile">1*</sup></a>, 
-            </span> 
+              <a href="https://chen-geng.com">Chen Geng<sup class="is-size-6-mobile">1*</sup></a>,
+            </span>
             <span class="myfont">
-              <a href="https://elliottwu.com/">Shangzhe Wu<sup class="is-size-6-mobile">1,2</sup></a>, 
+              <a href="https://elliottwu.com/">Shangzhe Wu<sup class="is-size-6-mobile">1,2</sup></a>,
             </span>
             <span class="myfont">
               <a href="https://www.jiajunwu.com">Jiajun Wu<sup class="is-size-6-mobile">1</sup></a>
             </span>
           </h1>
           <h1 class="is-5 is-size-5-mobile myfont" style="font-size: 2vw; opacity: 100%;">
-            <sup class="is-size-6-mobile">1</sup>Stanford University, <sup class="is-size-6-mobile">2</sup>University of Cambridge
+            <sup class="is-size-6-mobile">1</sup>Stanford University, <sup class="is-size-6-mobile">2</sup>University of
+            Cambridge
           </h1>
           <h1 class="is-5 is-size-5-mobile myfont" style="font-size: 1.5vw; opacity: 100%;">
             (* Equal Contribution)
@@ -164,19 +147,8 @@
         </div>
       </div>
 
-      <!-- Hero footer: will stick at the bottom -->
-      <!-- <div class="hero-foot is-hidden-mobile myfont" style="bottom: 0;">
-        <nav class="tabs is-boxed is-fullwidth is-size-5">
-          <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#inter">Interactive Results</a></li>
-            <li><a href="#clay">"Clay-Monster"</a></li>
-            <li><a href="#approach">Approach</a></li>
-          </ul>
-        </nav>
-      </div> -->
-
-      <div id="menu-footer" class="hero-foot is-hidden-mobile myfont" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10;">
+      <div id="menu-footer" class="hero-foot is-hidden-mobile myfont"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10;">
         <nav class="tabs is-boxed is-fullwidth is-size-5" style="font-size: 2vw">
           <ul>
             <li><a href="#intro">Introduction</a></li>
@@ -189,59 +161,6 @@
       </div>
 
     </div>
-
-    <!-- For mobile devices -->
-    <!-- <div class="section hero hero-cover-touch is-hidden-desktop is-link is-fullheight video" style="overflow: hidden; position:relative;">
-
-      <div class="hero-video is-inline-block-mobile"
-      style="height: 172.28571428vw; width: 100%; min-width: 100%;min-height: 56.25vw;">
-        <video playsinline autoplay muted loop>
-          <source src="https://chen-geng.com/rose4d/static/videos/teaser-mobile-small.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="overlay"></div>
-
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 7rem;">
-            Category-Agnostic <br> Neural Object Rigging
-          </h1>
-          <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 2rem;">
-            CVPR 2025
-          </h1>
-          <h1 class="is-2 is-size-4-mobile" style="font-size: 2rem; opacity: 100%;">
-            <span>
-              <a href="https://guangzhaohe.com">Guangzhao He</a>
-              <sup>1*</sup>
-            </span>,
-            <span>
-              <a href="https://chen-geng.com">Chen Geng</a>
-              <sup>1*</sup>
-            </span>,
-            <span>
-              <a href="https://elliottwu.com/">Shangzhe Wu</a>
-              <sup>2</sup>
-            </span>,
-            <span>
-              <a href="https://www.jiajunwu.com">Jiajun Wu</a>
-              <sup>1</sup>
-            </span>
-          </h1>
-          <h1 class="is-2 is-size-4-mobile" style="font-size: 2rem; opacity: 100%;">
-            Stanford University, University of Cambridge
-          </h1>
-          <h1 class="is-2 is-size-4-mobile" style="font-size: 2rem; opacity: 100%;">
-            (* denotes equal contribution)
-          </h1>
-        </div>
-      </div>
-
-      </div>
-
-    </div> -->
-
-    <!-- </div> -->
 
     <!-- Intro -->
     <div class="section is-medium myfont" id="intro">
@@ -258,10 +177,14 @@
       <br>
 
       <div class="content is-size-6-mobile" style="font-size: 1.3vw; width: 80%; text-align: center;">
-        <!-- Our world is populated by diverse, ever-moving beings — not just humans, but also pets, wild animals, and other dynamic entities that can move and deform. -->
-        In this work, we study the problem of modeling and understanding the <strong style="color: rgb(60, 218, 189); font-weight: bold;">structure of motion</strong> for <strong style="color: rgb(60, 218, 189); font-weight: bold;">arbitrary categories</strong> of deformable objects without prior knowledge. 
-        Due to the inherent low-dimensionality of motion structures, we learn to discover a low-dimensional pose space for dynamic objects by encoding them into a set of blobs. 
-        This representation captures interpretable structures for a diverse range of object categories, enabling intuitive object pose manipulation through explicit blob editing. 
+        In this work, we study the problem of modeling and understanding the <strong
+          style="color: rgb(60, 218, 189); font-weight: bold;">structure of motion</strong> for <strong
+          style="color: rgb(60, 218, 189); font-weight: bold;">arbitrary categories</strong> of deformable objects
+        without prior knowledge.
+        Due to the inherent low-dimensionality of motion structures, we learn to discover a low-dimensional pose space
+        for dynamic objects by encoding them into a set of blobs.
+        This representation captures interpretable structures for a diverse range of object categories, enabling
+        intuitive object pose manipulation through explicit blob editing.
       </div>
 
       <div style="text-align: center; margin-top: 0vh;">
@@ -287,23 +210,20 @@
 
       <div style="display: flex; justify-content: center; align-items: center; height: 8vh;">
         <div class="content" style="font-size: 1.3vw; width: 80%; text-align: center;">
-          <!-- <p> -->
-          <!-- We show the comparison of the generated 4D contents and baselines. <strong>Note that none of the baselines -->
-            <!-- could generate object intrinsics or relightable graphics assets.</strong> Therefore we only compare the -->
-          <!-- rendering. -->
-          <!-- </p> -->
-          Our architecture learns to disentangle object parts and represent them as <strong style="color: rgb(60, 218, 189);"><i class="ti ti-chart-bubble" style="font-size: 1.3vw;"></i>blobs</strong> in a <strong style="color: rgb(60, 218, 189);">feed-forward</strong> and fully <strong style="color: rgb(60, 218, 189);">self-supervised</strong> manner.
+          Our architecture learns to disentangle object parts and represent them as <strong
+            style="color: rgb(60, 218, 189);"><i class="ti ti-chart-bubble" style="font-size: 1.3vw;"></i>blobs</strong>
+          in a <strong style="color: rgb(60, 218, 189);">feed-forward</strong> and fully <strong
+            style="color: rgb(60, 218, 189);">self-supervised</strong> manner.
           The blobs can then be used for editing the pose and shape of the objects.<br>
-          Try out this interactive 3D demo by selecting an object and 
+          Try out this interactive 3D demo by selecting an object and
           <span style="
           background: linear-gradient(90deg, #16de91df, #3d91ff);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline-block; font-weight: bold;">
-          sliding the sliders
+            sliding the sliders
           </span>!
-          <!-- You can try to <strong style="color: rgb(39, 162, 123);">animate</strong> by sliding and moving the predicted blobs. -->
-          <!-- Also, check out what the <strong style="color: rgb(39, 162, 123);">3rd slider</strong> does by editing their scales! -->
         </div>
       </div>
 
@@ -318,8 +238,6 @@
       height: 70%;
       width: 80%;">
 
-        <!-- <div class="row" style="height: 100%;"> -->
-
         <div class="grid-container">
 
           <div class="selection-container">
@@ -327,39 +245,28 @@
 
             <div class="selection-wrapper" id="selectionWrapper"
               style="height: 25vh; color: white; box-shadow: 0 0 3.3vh 1.5vh rgba(29, 99, 87, 0.529); font-size: 1vw;">
-              <div class="selection-card selected"><i class="ti ti-paw" style="font-size: 1vw;"></i><span> Quadruped</span></div>
+              <div class="selection-card selected"><i class="ti ti-paw" style="font-size: 1vw;"></i><span>
+                  Quadruped</span></div>
               <div class="selection-card"><i class="ti ti-fish" style="font-size: 1vw;"></i><span> Fish</span></div>
-              <div class="selection-card"><i class="ti ti-eyeglass" style="font-size: 1vw;"></i><span> Glasses</span></div>
-              <!-- <div class="selection-card">Things</div>
-              <div class="selection-card">Scene 5</div>
-              <div class="selection-card">Scene 6</div>
-              <div class="selection-card">Scene 7</div> -->
+              <div class="selection-card"><i class="ti ti-eyeglass" style="font-size: 1vw;"></i><span> Glasses</span>
+              </div>
             </div>
 
           </div>
 
           <div class="modelviewer-container">
             <strong style="color: rgb(44, 76, 204); font-size: 1.3vw;">1. Input Mesh</strong>
-            <!-- <br> -->
-            <!-- <div id="progress-container" style="position: absolute; bottom: 10px; left: 10px; width: 200px; background: #eee; height: 6px; display: none;">
-              <div id="progress-bar" style="background: #3498db; height: 100%; width: 0%; transition: width 0.2s;"></div>
-            </div> -->
             <div class="model-viewer-wrapper" style="box-shadow: 0 0 3.3vh 1.5vh rgba(26, 52, 156, 0.791);">
-              <model-viewer id="model1" 
-                src="" alt="Reconstructed Mesh" camera-controls interaction-prompt="none"
+              <model-viewer id="model1" src="" alt="Reconstructed Mesh" camera-controls interaction-prompt="none"
                 exposure=0.5 style="width: 100%; height: 100%;">
               </model-viewer>
             </div>
           </div>
 
           <div class="modelviewer-container">
-            <!-- <h3> -->
             <strong style="color: rgb(106, 61, 232); font-size: 1.3vw;">2. Predicted Blobs</strong>
-            <!-- </h3> -->
-            <!-- <br> -->
             <div class="model-viewer-wrapper" style="box-shadow: 0 0 3.3vh 1.5vh rgba(55, 18, 156, 0.606);">
-              <model-viewer id="model2" 
-                src="" alt="Predicted Blobs" camera-controls interaction-prompt="none"
+              <model-viewer id="model2" src="" alt="Predicted Blobs" camera-controls interaction-prompt="none"
                 exposure=0.5 style="width: 100%; height: 100%;">
               </model-viewer>
             </div>
@@ -393,45 +300,27 @@
             <strong style="color: rgb(117, 37, 214); font-size: 1.3vw;">3. Edited Blobs</strong>
             <!-- <br> -->
             <div class="model-viewer-wrapper" style="box-shadow: 0 0 3.3vh 1.5vh rgba(91, 24, 173, 0.606);">
-              <model-viewer id="model3" 
-                src="" alt="Edited Blobs" camera-controls interaction-prompt="none"
-                exposure=0.5 style="width: 100%; height: 100%;">
+              <model-viewer id="model3" src="" alt="Edited Blobs" camera-controls interaction-prompt="none" exposure=0.5
+                style="width: 100%; height: 100%;">
               </model-viewer>
             </div>
           </div>
 
           <div class="modelviewer-container">
             <strong style="color: rgb(141, 26, 203); font-size: 1.3vw;">4. Edited Mesh</strong>
-            <!-- <br> -->
             <div class="model-viewer-wrapper" style="box-shadow: 0 0 3.3vh 1.5vh rgba(111, 22, 159, 0.606);">
-              <model-viewer id="model4" 
-                src="" alt="Edited Mesh" camera-controls interaction-prompt="none"
-                exposure=0.5 style="width: 100%; height: 100%;">
+              <model-viewer id="model4" src="" alt="Edited Mesh" camera-controls interaction-prompt="none" exposure=0.5
+                style="width: 100%; height: 100%;">
               </model-viewer>
             </div>
           </div>
 
-          <!-- <div class="pad" id="pad">
-            <div class="pad-dot" id="pad-dot"></div>
-          </div> -->
-
         </div>
 
-        <!-- <div style="display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
-          <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center;">
-            <input type="range" id="meshSlider0" min="0" max="10" step="0.01" value="0" class="vertical-slider">
-          </div>
-        </div> -->
-
-        <!-- </div> -->
-
-        <!-- </div>   -->
       </div>
 
       <br>
 
-
-      <!-- Comments on usage -->
       <div class="hide-on-touchscreens" style="
     display: flex;
     justify-content: center;
@@ -439,9 +328,12 @@
     padding-top: 1vh;
      font-size: 1.3vw;
     ">
-      <div><i class="ti ti-adjustments-horizontal"></i> <strong class="gradient-text-slide">Slide</strong> to animate</div>
-      <div><i class="ti ti-view-360-arrow"></i> <strong class="gradient-text-leftclick">Left-click</strong> and drag to rotate</div>
-      <div><i class="ti ti-arrows-move"></i> <strong class="gradient-text-rightclick">Right-click</strong> and drag to move</div>
+        <div><i class="ti ti-adjustments-horizontal"></i> <strong class="gradient-text-slide">Slide</strong> to animate
+        </div>
+        <div><i class="ti ti-view-360-arrow"></i> <strong class="gradient-text-leftclick">Left-click</strong> and drag
+          to rotate</div>
+        <div><i class="ti ti-arrows-move"></i> <strong class="gradient-text-rightclick">Right-click</strong> and drag to
+          move</div>
         <div><i class="ti ti-zoom"></i> <strong class="gradient-text-scroll">Scroll</strong> to zoom</div>
 
       </div>
@@ -463,47 +355,38 @@
 
       <br>
 
-      <!-- <div class="content" style="font-size: 2vh; width: 80%; text-align: center;">
-      To further showcase the potential of our method in real-world applications-particularly for casual users without 3D modeling expertise-we construct an object category called "clay-monster", consisting of 12 clay figures scanned in 3 to 5 poses each <strong style="color: rgb(60, 218, 189); font-weight: bold;">using only an iPhone</strong>. 
-      The scans are captured using ARKit, and each takes approximately one minute to complete. 
-      Using this simple scanning pipeline, we are able to train our model for pose manipulation of such artificial "clay-monsters".
+      <!-- Two Columns -->
+      <div class="columns" style="width: 80%;">
+
+        <!-- Left Column -->
+        <div class="column is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+          <div class="content is-size-6-mobile" style="font-size: 1.3vw; text-align: center; max-width: 90%;">
+            We capture a <strong style="color: rgb(60, 218, 189); font-weight: bold;">real-world category</strong>
+            called "clay-monster", with 12 clay figures scanned in 3 to 5 poses each using <strong
+              style="color: rgb(60, 218, 189); font-weight: bold;">only an iPhone</strong>.
+          </div>
+
+          <div style="text-align: center; margin-top: 2vh;">
+            <img src="assets/images/clay_capture.png" alt="Clay Capture"
+              style="max-width: 100%; height: auto; filter: brightness(90%);">
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+          <div style="text-align: center; margin-bottom: 2vh;">
+            <img src="assets/images/clay_monster.png" alt="Clay Monster"
+              style="max-width: 90%; height: auto; filter: brightness(90%);">
+          </div>
+
+          <div class="content is-size-6-mobile" style="font-size: 1.3vw; text-align: center; max-width: 90%;">
+            Using this simple scanning pipeline, we are able to train our model for <strong
+              style="color: rgb(60, 218, 189); font-weight: bold;">pose manipulation</strong> of such artificial
+            "clay-monsters".
+          </div>
+        </div>
+
       </div>
-
-      <div style="text-align: center; margin-top: 0vh;">
-        <img src="assets/images/clay_monster.png" alt="Approach Image"
-          style="max-width: 50%; height: auto; filter: brightness(90%);">
-      </div> -->
-
-       <!-- Two Columns -->
-  <div class="columns" style="width: 80%;">
-    
-    <!-- Left Column -->
-    <div class="column is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-      <div class="content is-size-6-mobile" style="font-size: 1.3vw; text-align: center; max-width: 90%;">
-        <!-- <p> -->
-          We capture a <strong style="color: rgb(60, 218, 189); font-weight: bold;">real-world category</strong> called "clay-monster", with 12 clay figures scanned in 3 to 5 poses each using <strong style="color: rgb(60, 218, 189); font-weight: bold;">only an iPhone</strong>.
-        <!-- </p> -->
-      </div>
-
-      <div style="text-align: center; margin-top: 2vh;">
-        <img src="assets/images/clay_capture.png" alt="Clay Capture"
-          style="max-width: 100%; height: auto; filter: brightness(90%);">
-      </div>
-    </div>
-
-    <!-- Right Column -->
-    <div class="column is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-      <div style="text-align: center; margin-bottom: 2vh;">
-        <img src="assets/images/clay_monster.png" alt="Clay Monster"
-          style="max-width: 90%; height: auto; filter: brightness(90%);">
-      </div>
-
-      <div class="content is-size-6-mobile" style="font-size: 1.3vw; text-align: center; max-width: 90%;">
-        Using this simple scanning pipeline, we are able to train our model for <strong style="color: rgb(60, 218, 189); font-weight: bold;">pose manipulation</strong> of such artificial "clay-monsters".
-      </div>
-    </div>
-
-  </div>
 
 
 
@@ -523,12 +406,16 @@
 
       <br>
       <div class="content is-6 is-size-6-mobile" style="font-size: 1.3vw; width: 80%; text-align: center;">
-        We use a set of <strong style="color: rgb(60, 218, 189); font-weight: bold;">feature-embeded blobs</strong> to represent the pose space of deformable objects.
-        An encoder takes an object point cloud as input and maps it into blobs using a learnable codebook of query tokens that cross-attend
-        with semantic point-wise features. 
-        Once generated, these blobs can be edited by users to adjust the object's pose. 
-        To perform decoding on the edited blobs, they are voxelized into a feature volume and mapped to a 3D occupancy volume using a transformer architecture. 
-        Finally, we query the decoded volume with sampled 3D coordinates to predict occupancy values, which are used to extract the edited mesh.
+        We use a set of <strong style="color: rgb(60, 218, 189); font-weight: bold;">feature-embeded blobs</strong> to
+        represent the pose space of deformable objects.
+        An encoder takes an object point cloud as input and maps it into blobs using a learnable codebook of query
+        tokens that cross-attend
+        with semantic point-wise features.
+        Once generated, these blobs can be edited by users to adjust the object's pose.
+        To perform decoding on the edited blobs, they are voxelized into a feature volume and mapped to a 3D occupancy
+        volume using a transformer architecture.
+        Finally, we query the decoded volume with sampled 3D coordinates to predict occupancy values, which are used to
+        extract the edited mesh.
       </div>
 
       <div style="text-align: center; margin-top: 0vh;">
@@ -552,27 +439,27 @@
       <br>
 
       <div
-      style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
-      <div class="container">
-        <h1 class="title is-1 is-hidden-touch text-white width: 90%;" style="font-size: 3vh;">
-          Bibtex
-        </h1>
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+        <div class="container">
+          <h1 class="title is-1 is-hidden-touch text-white width: 90%;" style="font-size: 3vh;">
+            Bibtex
+          </h1>
+        </div>
       </div>
-    </div>
 
-    <br>
+      <br>
 
-    <div style="width: 80%; display: flex; flex-direction: column; align-items: center;">
-      <div class="columns is-centered is-hidden-touch">
-        <div class="content" style="margin-top: 10pt; width: 100%;">
-          <div style="
+      <div style="width: 80%; display: flex; flex-direction: column; align-items: center;">
+        <div class="columns is-centered is-hidden-touch">
+          <div class="content" style="margin-top: 10pt; width: 100%;">
+            <div style="
             border-radius: 12px;
             background-color: #1e1e1e;
             padding: 5px;
             overflow-x: auto;
             width: 100%;
           ">
-            <pre class="" style="
+              <pre class="" style="
               margin: 0;
               background: transparent;
               border-radius: 12px;
@@ -585,44 +472,51 @@
   year      = {2025},
   pages     = {22078-22088}
 }</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-    <br>
-
-      <div
-      style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
-      <div class="container">
-        <h1 class="title is-1 is-size-2-mobile text-white" style="font-size: 3vh;">
-          Acknowledgements
-        </h1>
-      </div>
-    </div>
-
-    <br>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                Website template modified from <a href="https://chen-geng.com/rose4d/">Birth and Death of a Rose</a>, <a href="https://cut3r.github.io/">CUT3R</a>, <a href="https://nerfies.github.io/">NeRFies</a>, <a href="https://www.cs.columbia.edu/~huy/scalingup/">Scaling Up Distilling Down</a>, and <a href="https://umi-on-legs.github.io/">UMI on Legs</a>.
-              </p>
-              <p>
-                This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-              </p>
-              <p>
-                This means you are free to borrow and modify the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website as long as you link back to the <a href="https://nerfies.github.io/">NeRFies</a> page in the footer.
-              </p>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+
+      <br>
+      <br>
+
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+        <div class="container">
+          <h1 class="title is-1 is-size-2-mobile text-white" style="font-size: 3vh;">
+            Acknowledgements
+          </h1>
+        </div>
+      </div>
+
+      <br>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  Website template modified from <a href="https://chen-geng.com/rose4d/">Birth and Death of a Rose</a>,
+                  <a href="https://cut3r.github.io/">CUT3R</a>, <a href="https://nerfies.github.io/">NeRFies</a>, <a
+                    href="https://www.cs.columbia.edu/~huy/scalingup/">Scaling Up Distilling Down</a>, and <a
+                    href="https://umi-on-legs.github.io/">UMI on Legs</a>.
+                </p>
+                <p>
+                  This website is licensed under a <a rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+                    International License</a>.
+                </p>
+                <p>
+                  This means you are free to borrow and modify the <a
+                    href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website as long as you
+                  link back to the <a href="https://nerfies.github.io/">NeRFies</a> page in the footer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
     </div>
 
@@ -631,20 +525,18 @@
     <!-- Default Statcounter code for canor
     https://guangzhaohe.com/canor -->
     <script type="text/javascript">
-      var sc_project=13141336; 
-      var sc_invisible=1; 
-      var sc_security="21e913a9"; 
-      </script>
-      <script type="text/javascript"
-      src="https://www.statcounter.com/counter/counter.js"
-      async></script>
-      <noscript><div class="statcounter"><a title="Web Analytics
-      Made Easy - Statcounter" href="https://statcounter.com/"
-      target="_blank"><img class="statcounter"
-      src="https://c.statcounter.com/13141336/0/21e913a9/1/"
-      alt="Web Analytics Made Easy - Statcounter"
-      referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-      <!-- End of Statcounter Code -->
+      var sc_project = 13141336;
+      var sc_invisible = 1;
+      var sc_security = "21e913a9"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+      <div class="statcounter"><a title="Web Analytics
+      Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter"
+            src="https://c.statcounter.com/13141336/0/21e913a9/1/" alt="Web Analytics Made Easy - Statcounter"
+            referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 
 </body>
 

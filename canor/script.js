@@ -1,8 +1,6 @@
 const unit = 10;
 const object_list = ['quad', 'fish', 'glasses']
 
-// document.addEventListener('DOMContentLoaded', () => {
-
 console.log('this is first');
 
 const modelViewer1 = document.getElementById('model1');
