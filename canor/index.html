@@ -38,6 +38,64 @@
   <script type="module" src="https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js"></script>
 
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <style>
+    .ui-widget-overlay {
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+    }
+
+    .ui-dialog.code-release-modal {
+      background: #0f1117;
+      color: #f1f5f9;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      padding: 0;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-titlebar {
+      background: linear-gradient(90deg, #111827, #0b1220);
+      color: #f8fafc;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.9rem 1rem;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-title {
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+      font-weight: 600;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-titlebar-close {
+      border: none;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-titlebar-close:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-content {
+      background: #0f1117;
+      color: #e5e7eb;
+      padding: 1rem 1rem 1.15rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-content a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .ui-dialog.code-release-modal .ui-dialog-content a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
@@ -82,9 +140,9 @@
                   <span class="myfont">arXiv</span>
                 </a>
 
-                <a class="navbar-item pl-4 pr-4" href="#" style="font-size: 1.4vw;">
+                <a class="navbar-item pl-4 pr-4" href="#" id="code-link-notice" style="font-size: 1.4vw;">
                   <i class="ti ti-code" style="margin-right: 0.3vw;;"></i>
-                  <span class="myfont">Code (Coming soon)</span>
+                  <span class="myfont">Code</span>
                 </a>
 
                 <a class="navbar-item pl-4 pr-4" href="assets/videos/teaser_video_slide.mp4" style="font-size: 1.4vw;">
@@ -520,7 +578,28 @@
 
     </div>
 
+    <div id="code-release-dialog" title="Code Release" style="display: none;">
+      <p>
+        We are planning to release the code soon, but feel free to send an request email to
+        <a href="https://www.guangzhaohe.com" target="_blank" rel="noopener noreferrer">Guangzhao He</a>
+        and get the preliminary code with pretrained model weights (likely within 24 hours).
+      </p>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+      $(function () {
+        $("#code-link-notice").on("click", function (event) {
+          event.preventDefault();
+          $("#code-release-dialog").dialog({
+            modal: true,
+            width: Math.min(window.innerWidth * 0.9, 560),
+            resizable: false,
+            dialogClass: "code-release-modal"
+          });
+        });
+      });
+    </script>
 
     <!-- Default Statcounter code for canor
     https://guangzhaohe.com/canor -->
