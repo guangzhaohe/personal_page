@@ -18,6 +18,33 @@
         border-radius: 15px; /* Adjust the border radius as needed */
         overflow: hidden; /* Ensure content within rounded corners is clipped */
       }
+
+      .logo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 12px;
+      }
+
+      .logo-card {
+        width: 220px;
+        padding: 8px 12px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .logo-card img {
+        width: 100%;
+        height: 72px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .logo-card img.deepmind-logo {
+        transform: translateY(-2.5px);
+      }
     </style>
 
   </head>
@@ -35,6 +62,7 @@
                 </p>
                 <p>
                   I'm a first-year CS Ph.D. student at <a href="https://bowers.cornell.edu/">Cornell University</a>, working with <a href="https://www.cs.cornell.edu/~weichiu/">Prof. Wei-Chiu Ma</a> and <a href="https://www.hadarelor.com/">Prof. Hadar Elor</a>. 
+                  I'm also a student researcher at <a href="https://deepmind.google/">Google DeepMind</a>, hosted by <a href="https://dorverbin.github.io/">Dor Verbin</a>.
                   I received my Bachelor's degree with honors in Computer Science at <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>. 
                   <!-- I currently hold a GPA of 3.99/4.0 and expect to receive my degree in June, 2025. -->
                 </p>
@@ -51,6 +79,14 @@
                   <a href="https://twitter.com/AlexHe00880585">X</a> &nbsp;/&nbsp;
                   <a href="https://github.com/GuangzhaoHe">Github</a>
                 </p>
+                <div class="logo-grid">
+                  <div class="logo-card">
+                    <img src="images/cornell-logo.svg" alt="Cornell University logo">
+                  </div>
+                  <div class="logo-card">
+                    <img class="deepmind-logo" src="images/deepmind-logo.svg" alt="Google DeepMind logo">
+                  </div>
+                </div>
               </td>
               <td style="padding:2.5%;width:40%;max-width:40%">
                 <!-- <a href="images/AlexHe.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/AlexHe.jpg" class="hoverZoomLink"></a> -->
@@ -72,6 +108,7 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>News</h2>
                   <ul>
+                    <li>[2026.02] I'm joining <b>Google DeepMind</b> as a student researcher.</li>
                     <li>[2025.08] I'm starting my Ph.D. studies at <b>Cornell University</b>.</li>
                     <li>[2025.06] Our work <b>ERNet</b> is accepted to <b>ICCV 2025</b>. See you in Honolulu!</li>
                     <li>[2025.02] Our work <b>CANOR</b> is accepted to <b>CVPR 2025</b>. See you in Nashville!</li>
@@ -88,7 +125,7 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Publication</h2>
                   <p>
-                    My research interests lie at the intersection of <b>Vision</b> and <b>Graphics</b>, particularly in the <b>representation</b> and <b>understanding</b> of <b>dynamic 3D scenes</b>, with the goal of enabling machines to perceive the dynamic and diverse world as humans do.
+                    My research interests lie at the intersection of <b>Computer Vision</b> and <b>Reasoning</b>, particularly in the <b>representation</b>, <b>understanding</b> and <b>long-term memory</b> of <b>dynamic 3D scenes</b>, with the goal of enabling machines to perceive the dynamic and diverse world as humans do.
                   </p>
               </td>
             </tr>
@@ -383,4 +420,3 @@
 
   });
 </script>
-
