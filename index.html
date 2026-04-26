@@ -109,12 +109,13 @@
                 <h2>News</h2>
                   <ul>
                     <li>[2026.02] I'm joining <b>Google DeepMind</b> as a student researcher.</li>
+                    <li>[2026.02] <b>NeuROK</b> is accepted to <b>CVPR 2026</b>. See you in Denver!</li>
                     <li>[2025.08] I'm starting my Ph.D. studies at <b>Cornell University</b>.</li>
-                    <li>[2025.06] Our work <b>ERNet</b> is accepted to <b>ICCV 2025</b>. See you in Honolulu!</li>
-                    <li>[2025.02] Our work <b>CANOR</b> is accepted to <b>CVPR 2025</b>. See you in Nashville!</li>
+                    <li>[2025.06] <b>ERNet</b> is accepted to <b>ICCV 2025</b>. See you in Honolulu!</li>
+                    <li>[2025.02] <b>CANOR</b> is accepted to <b>CVPR 2025</b>. See you in Nashville!</li>
                     <li>[2024.06] I'm visiting <b>Stanford Vision and Learning Lab</b> as a research intern.</li>
-                    <li>[2024.01] Our work <b>4K4D</b> is accepted to <b>CVPR 2024</b>.</li>
-                    <li>[2023.07] Our work <b>EasyVolcap</b> is accepted to <b>SIGGRAPH Asia 2023 TC</b>.</li>
+                    <li>[2024.01] <b>4K4D</b> is accepted to <b>CVPR 2024</b>.</li>
+                    <li>[2023.07] <b>EasyVolcap</b> is accepted to <b>SIGGRAPH Asia 2023 TC</b>.</li>
                   </ul>
               </td>
             </tr>
@@ -130,6 +131,56 @@
               </td>
             </tr>
           </tbody></table>
+
+          <!--neurok-->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout=" neurok_stop()" onmouseover="neurok_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='neurok_image'>
+                    <div class="rounded">
+                      <video playsinline width=100% muted autoplay loop>
+                        <source src="images/neurok.png">our browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="rounded">
+                    <img src='images/neurok.png' width=100%>
+                  </div>
+                </div>
+                <script type="text/javascript">
+                  function neurok_start() {
+                    document.getElementById('neurok_image').style.opacity = "1";
+                  }
+
+                  function neurok_stop() {
+                    document.getElementById('neurok_image').style.opacity = "0";
+                  }
+                  fourk4d_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <span class="papertitle">NeuROK: Generative 4D Neural Object Kinematics</span>
+
+                <br>
+                <a href="https://chen-geng.com/">Chen Geng*</a>,
+                <strong>Guangzhao He*</strong>,
+                <a href="https://yuegao.me/">Yue Gao*</a>,
+                <a href="https://cs.stanford.edu/~yzzhang/">Yunzhi Zhang</a>,
+                <a href="https://elliottwu.com/">Shangzhe Wu</a>,
+                <a href="https://jiajunwu.com/">Jiajun Wu</a>
+                <br>
+                <em>CVPR 2026</em>
+                <br>
+                <a href="images/neurok_cvpr.pdf">pdf</a>
+                <p></p>
+                <p>
+                  A feed-forward framework that learns a low-dimensional manifold (NeuROK) of plausible deformations for 3D objects, enabling category-agnostic generation and simulation of object dynamics across cloth, elastic bodies, articulated objects, and more.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>  
 
           <!--canor-->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -149,14 +200,14 @@
                   </div>
                 </div>
                 <script type="text/javascript">
-                  function fourk4d_start() {
+                  function canor_start() {
                     document.getElementById('canor_image').style.opacity = "1";
                   }
 
-                  function fourk4d_stop() {
+                  function canor_stop() {
                     document.getElementById('canor_image').style.opacity = "0";
                   }
-                  fourk4d_stop()
+                  canor_stop()
                 </script>
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
