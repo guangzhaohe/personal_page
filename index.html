@@ -132,8 +132,62 @@
             </tr>
           </tbody></table>
 
+          <!--dynolat-->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout=" dynolat_stop()" onmouseover="dynolat_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='dynolat_image'>
+                    <div class="rounded">
+                      <video playsinline width=100% muted autoplay loop>
+                        <source src="images/dynolat.png">our browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="rounded">
+                    <img src='images/dynolat.png' width=100%>
+                  </div>
+                </div>
+                <script type="text/javascript">
+                  function dynolat_start() {
+                    document.getElementById('dynolat_image').style.opacity = "1";
+                  }
+
+                  function dynolat_stop() {
+                    document.getElementById('dynolat_image').style.opacity = "0";
+                  }
+                  dynolat_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <span class="papertitle">DynOLAT: OLAT Video Prediction for Controllable Dynamic Full-Body Relighting</span>
+
+                <br>
+                <a href="https://xiaotao1340.github.io/">Taoming Liu*</a>,
+                <a href="https://stland-admin.github.io/">Yinji ShenTu*</a>,
+                <strong>Guangzhao He</strong>,
+                <a href="https://krahets.com/">Yudong Jin</a>,
+                <span>Yukang Ye</span>,
+                <a href="https://derizsy.github.io/">Siyu Zhang</a>,
+                <span>Fan Jia</span>,
+                <a href="http://www.cad.zju.edu.cn/home/huawei/">Wei Hua</a>,
+                <a href="http://www.cad.zju.edu.cn/home/bao/">Hujun Bao</a>,
+                <a href="https://www.xzhou.me/">Xiaowei Zhou</a>
+                <br>
+                <em>SIGGRAPH Asia 2026</em>
+                <br>
+                <!-- <a href="https://arxiv.org/abs/2606.02580">arXiv</a> -->
+                <p></p>
+                <p>
+                  An agentic framework that reconstructs a 3D scene from a single image by progressively refining scene factors including geometry, materials, composition, and lighting directly in executable Blender code space.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>  
+
           <!--seig-->
-          <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr onmouseout=" seig_stop()" onmouseover="seig_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
@@ -178,7 +232,7 @@
                 </p>
               </td>
             </tr>
-          </tbody></table>   -->
+          </tbody></table>  
 
           <!--neurok-->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
