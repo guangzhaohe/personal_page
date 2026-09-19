@@ -1,0 +1,105 @@
+WEBVTT
+
+opening
+00:00:00.700 --> 00:00:04.419
+Can 4D foundation models remember? Introducing PersistBench.
+
+observation
+00:00:08.750 --> 00:00:15.318
+Look at this person. Even after they leave our view, we remember where they were going towards.
+
+question
+00:00:17.900 --> 00:00:20.110
+Can a 4D model remember too?
+
+brand
+00:00:22.100 --> 00:00:25.963
+PersistBench benchmarks visual memory in 4D foundation models.
+
+memory-question
+00:00:27.000 --> 00:00:29.212
+How do we define visual memory?
+
+memory-permanence
+00:00:29.900 --> 00:00:33.181
+Inspired by cognitive science, we measure object permanence.
+
+memory-motion
+00:00:33.700 --> 00:00:35.631
+The second is motion continuity.
+
+memory-appearance
+00:00:37.550 --> 00:00:39.853
+And the third is appearance preservation.
+
+permanence
+00:00:44.700 --> 00:00:55.001
+For object permanence, we track the object with SAM2 and verify its presence with a vision language model. We measure how often it is still there.
+
+motion
+00:00:59.700 --> 00:01:09.700
+For motion continuity, we compare predicted and reference mask centers, normalize their distance by object size, and turn position error into motion similarity.
+
+appearance
+00:01:14.800 --> 00:01:26.397
+For appearance preservation, DINOv2 extracts visual features. We average the features inside each object mask, then compare the prediction and reference representations.
+
+data-gap
+00:01:29.700 --> 00:01:33.951
+Without an out-of-view reference, how can we check the model’s memory?
+
+another-view
+00:01:36.100 --> 00:01:39.423
+What if another view could reveal the same moment?
+
+360
+00:01:40.350 --> 00:01:43.431
+Our key idea is to use 360° video.
+
+turn
+00:01:45.100 --> 00:01:50.124
+As the event continues, we turn the camera and reveal the object again.
+
+reference
+00:01:52.100 --> 00:01:55.582
+This gives us real-world references at the same timestep.
+
+evaluation
+00:01:58.100 --> 00:02:00.951
+Now we can check the model against reality.
+
+data-and-metrics
+00:02:02.600 --> 00:02:06.670
+Our curated data and three metrics make visual memory measurable.
+
+input
+00:02:08.000 --> 00:02:12.197
+Give the model an input video and a target camera trajectory.
+
+prediction
+00:02:15.700 --> 00:02:17.866
+The model predicts the target view.
+
+comparison
+00:02:19.200 --> 00:02:24.220
+We compare prediction and reference at matched timesteps, then compute all three scores.
+
+models
+00:02:26.200 --> 00:02:36.530
+With two thousand paired sequences, we test twelve models across 4D reconstruction, camera-controllable video generation, and video-to-360° generation.
+
+drop
+00:02:38.800 --> 00:02:45.420
+Strong visible scores can collapse when objects leave view, with large drops across all three model families.
+
+leaderboard
+00:02:48.100 --> 00:02:54.517
+Some models remember more than others, but the gap between visible and out-of-view performance remains substantial.
+
+closing
+00:02:58.100 --> 00:03:01.573
+How well does YOUR 4D foundation model remember?
+
+explore
+00:03:05.100 --> 00:03:06.393
+Explore PersistBench.

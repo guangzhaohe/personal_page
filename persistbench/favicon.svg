@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>PersistBench</title>
+  <rect width="64" height="64" fill="#fdfaf4"/>
+  <path fill="#1b1b1b" d="M13 10h24c12 0 19 5 19 14S49 38 37 38h-9v13c0 2 2 3 8 3v3H13v-3c6 0 7-1 7-3V16c0-2-1-3-7-3zm15 4v20h7c9 0 12-3 12-10s-3-10-12-10z"/>
+</svg>

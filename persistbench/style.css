@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 250px;
   /* Hide TOC by default */
-  display: none;
+  display: none; 
   /* left: max(30px, calc(25vw - 330px)); */ /* Move left positioning into media query */
   z-index: 1000; /* Add a high z-index to ensure TOC stays on top */
 }
@@ -23,9 +23,9 @@ body {
 @media (min-width: 1400px) {
   .toc {
     /* Show the TOC */
-    display: block;
+    display: block; 
     /* Apply the calculated left position */
-    left: max(30px, calc(25vw - 330px));
+    left: max(30px, calc(25vw - 330px)); 
   }
 }
 
@@ -103,11 +103,11 @@ body {
 /* Style for the affiliation specifically */
 .authors .affiliation {
     /* Change from bold to a higher numeric weight */
-    /* font-weight: bold; */
+    /* font-weight: bold; */ 
     /* Set font-weight to 700 (standard bold) */
-    font-weight: 600;
-    font-size: 16px;
-    color: #111;
+    font-weight: 600;  
+    font-size: 16px;   
+    color: #111;      
 }
 /* Style for links within the authors block */
 .authors a {
@@ -133,12 +133,12 @@ img {
   width: 100%;
   /* Update border: set width (e.g., 4px), style (solid), color (#000) */
   /* border: 0cm solid #000; */
-  border: 1.5px solid #000;
+  border: 1.5px solid #000; 
   /* Add border-radius for rounded corners */
-  border-radius: 15px;
+  border-radius: 15px; 
   margin: 0px 20px; /* Keep global rule if needed elsewhere */
   /* Ensure images behave correctly with border-box sizing */
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 /* Override for images directly within .main-content that need to align */
@@ -400,11 +400,11 @@ video.r2s-video-item {
                     but the current slot rule uses the child selector '>' so it's fine. */
   flex-direction: column;
   gap: 5px;
-
+  
   width: auto; /* Width determined by its 1:1 children */
   height: 100%; /* Take full available height of its slot (which is max 180px) */
   max-width: 100%; /* Ensure it doesn't overflow its slot if children are unexpectedly wide */
-
+  
   /* Remove any slot-like styling if it was applied by a more general class,
      as its appearance is defined by its children and its slot parent. */
   border: none; /* The slot around .stacked-ego-videos has the border */

@@ -6,10 +6,12 @@
   <meta name="description" content="PersistBench evaluates visual memory in 4D foundation models: object permanence, motion continuity, and appearance preservation beyond the input field of view.">
   <meta name="theme-color" content="#fdfaf4">
   <title>PersistBench: Can 4D Foundation Models Remember?</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/persistbench/interactives.css?v=b54251726745">
-  <link rel="stylesheet" href="media-loader.css?v=58954a29f17c">
-  <script type="module" src="assets/persistbench/interactives.js?v=b54251726745"></script>
+  <link rel="stylesheet" href="assets/persistbench/interactives.css?v=722ba3067abf">
+  <script type="module" src="assets/persistbench/interactives.js?v=722ba3067abf"></script>
+  <script data-goatcounter="https://alexhe.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,18 +41,27 @@
     </header>
 
     <div class="quick-links" aria-label="Project resources">
-      <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf" target="_blank" rel="noopener">[pdf]</a>
-      <a aria-disabled="true" title="arXiv link coming soon">[arxiv]</a>
+      <span class="quick-link-group">
+      <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e" target="_blank" rel="noopener">[pdf]</a>
+      <a href="https://arxiv.org/abs/2609.20819" target="_blank" rel="noopener">[arxiv]</a>
+      </span>
+      <span class="quick-link-group">
+      <a href="#leaderboard">[leaderboard]</a>
+      <a aria-disabled="true" title="Submission link coming soon">[Submit]</a>
+      </span>
+      <span class="quick-link-group">
       <a aria-disabled="true" title="Code link coming soon">[code]</a>
-      <a href="#leaderboard">[benchmark]</a>
-      <a href="#citation">[cite]</a>
+      <a aria-disabled="true" title="Data link coming soon">[data]</a>
+      </span>
     </div>
 
     <figure class="hero-figure" id="teaser">
-      <video id="teaser-video" muted controls playsinline preload="none" width="1920" height="1080" poster="assets/persistbench/teaser-website-poster.jpg" aria-label="Can 4D Foundation Models Remember? A 3 minute 10 second introduction to PersistBench">
-        <source src="assets/persistbench/teaser-website.mp4" type="video/mp4">
-        <a href="assets/persistbench/teaser-website.mp4">Watch the PersistBench teaser</a>.
+      <video id="teaser-video" autoplay muted controls playsinline preload="metadata" width="1920" height="1080" poster="assets/persistbench/teaser-poster.jpg" aria-label="Can 4D Foundation Models Remember? A 3 minute 10 second introduction to PersistBench">
+        <source src="assets/persistbench/teaser.mp4" type="video/mp4">
+        <track kind="captions" src="assets/persistbench/teaser-narration.vtt" srclang="en" label="English narration">
+        <a href="assets/persistbench/teaser.mp4">Watch the PersistBench teaser</a>.
       </video>
+      <figcaption class="figure-caption">Music: <a href="https://open.spotify.com/track/6u8iZCoRaMHBpzB6hEcQQk" target="_blank" rel="noopener noreferrer">No Goodbye To Our Future</a> by <a href="https://open.spotify.com/artist/1eaRqAFMkHloas4Gm5jBpJ" target="_blank" rel="noopener noreferrer">Elykz</a></figcaption>
     </figure>
 
     <section id="abstract">
@@ -66,23 +77,23 @@
       <p class="section-intro">Watch the people in these scenes as the camera turns away. Once they leave the view, can you still remember where they are, how they are moving, and what they look like?</p>
       <div class="motivation-examples">
         <figure class="paper-figure">
-          <video controls muted playsinline preload="none" width="640" height="480" poster="assets/persistbench/motivation/car-show/poster.jpg" aria-label="A person at a car show is highlighted in slow motion before leaving view"><source src="assets/persistbench/motivation/car-show.mp4" type="video/mp4"></video>
+          <video controls muted playsinline preload="metadata" width="640" height="480" poster="assets/persistbench/motivation/car-show/poster.jpg" aria-label="A person at a car show is highlighted in slow motion before leaving view"><source src="assets/persistbench/motivation/car-show.mp4" type="video/mp4"></video>
           <figcaption class="figure-caption">A person in a white T-shirt and red cap walks through a car show.</figcaption>
         </figure>
         <figure class="paper-figure">
-          <video controls muted playsinline preload="none" width="640" height="480" poster="assets/persistbench/motivation/market/poster.jpg" aria-label="A person on a market path is highlighted in slow motion before leaving view"><source src="assets/persistbench/motivation/market.mp4" type="video/mp4"></video>
+          <video controls muted playsinline preload="metadata" width="640" height="480" poster="assets/persistbench/motivation/market/poster.jpg" aria-label="A person on a market path is highlighted in slow motion before leaving view"><source src="assets/persistbench/motivation/market.mp4" type="video/mp4"></video>
           <figcaption class="figure-caption">A person in a blue shirt walks along a market path.</figcaption>
         </figure>
         <figure class="paper-figure">
-          <video controls muted playsinline preload="none" width="640" height="480" poster="assets/persistbench/motivation/trail/poster.jpg" aria-label="A hiker is highlighted in slow motion before the camera turns away"><source src="assets/persistbench/motivation/trail.mp4" type="video/mp4"></video>
+          <video controls muted playsinline preload="metadata" width="640" height="480" poster="assets/persistbench/motivation/trail/poster.jpg" aria-label="A hiker is highlighted in slow motion before the camera turns away"><source src="assets/persistbench/motivation/trail.mp4" type="video/mp4"></video>
           <figcaption class="figure-caption">A hiker in a blue top stands beside a rocky trail.</figcaption>
         </figure>
       </div>
       <div class="motivation-controls" hidden><button id="motivation-play" type="button">Play</button><button id="motivation-replay" type="button">Replay all</button></div>
       <div class="section">
-        <p>Even without looking back, we retain a mental representation of the person: we expect them to continue to exist, anticipate how they move, and remember their appearance. This ability to reason about the world beyond immediate perception motivates our question.</p>
+        <p>Even without looking back, we retain a mental representation of the person: we expect them to continue to exist, anticipate how they move, and remember their appearance. This ability to reason about the world beyond immediate perception motivates our question:</p>
       </div>
-      <blockquote class="attention-block"><p>Do 4D foundation models remember in a similar way as humans do?</p></blockquote>
+      <blockquote class="attention-block compact"><p>Do 4D foundation models remember in a similar way as humans do?</p></blockquote>
       <div class="section">
         <p><strong>What are 4D foundation models?</strong> In this work, we use the term for 4D vision models that reconstruct or generate dynamic 3D scenes, meaning three-dimensional environments evolving over time. They take visual observations and can be queried to render the scene from other viewpoints, allowing us to examine what they retain beyond the input view.</p>
         <p>Examples include <strong>4D reconstruction models</strong> such as <a href="#ref-86">4DGT</a>, which reconstruct a dynamic scene from input video; <strong>camera-controllable video generation models</strong> such as <a href="#ref-61">GEN3C</a>, which synthesize views along a requested camera trajectory; and <strong>video-to-360° models</strong> such as <a href="#ref-48">Argus</a>, which generate panoramic video from perspective inputs. We probe these models through their rendered outputs to ask whether they preserve the objects they have observed, including their motion and appearance.</p>
@@ -128,23 +139,25 @@
         <blockquote class="attention-block compact"><p>Our key idea is to use <strong>360° video as omniscient ground truth</strong>. From the same recording, we crop two synchronized perspective videos. In the input, the camera turns away from the target. In the reference, the target remains visible, giving us its true state beyond the input field of view.</p></blockquote>
       </div>
       <figure class="paper-figure benchmark-demo" id="benchmark-demo">
-        <div class="media-label">360° recording</div>
-        <video id="benchmark-panorama" muted playsinline preload="none" width="1280" height="640" poster="assets/persistbench/benchmark/panorama.jpg" aria-label="Dataset v7 panorama with moving outlines for the input and reference crops">
-          <source src="assets/persistbench/benchmark/panorama.mp4" type="video/mp4">
-        </video>
-        <div class="benchmark-crops">
-          <div>
-            <div class="media-label input-label">Input view</div>
-            <video id="benchmark-input" muted playsinline preload="none" width="640" height="480" poster="assets/persistbench/benchmark/input.jpg" aria-label="Input crop in which the person leaves view"><source src="assets/persistbench/benchmark/input.mp4" type="video/mp4"></video>
+        <div class="benchmark-views">
+          <div class="benchmark-source">
+            <div class="media-label">360° recording</div>
+            <video id="benchmark-panorama" muted playsinline preload="metadata" width="1280" height="640" poster="assets/persistbench/benchmark/panorama.jpg" aria-label="Dataset v7 panorama with moving outlines for the input and reference crops"><source src="assets/persistbench/benchmark/panorama.mp4" type="video/mp4"></video>
           </div>
-          <div>
+          <div class="benchmark-input-view">
+            <div class="media-label input-label">Input view</div>
+            <video id="benchmark-input" muted playsinline preload="metadata" width="640" height="480" poster="assets/persistbench/benchmark/input.jpg" aria-label="Input crop in which the person leaves view"><source src="assets/persistbench/benchmark/input.mp4" type="video/mp4"></video>
+          </div>
+          <svg class="benchmark-arrow benchmark-input-arrow" viewBox="0 0 32 20" aria-hidden="true"><path d="M30 10H3M11 2l-8 8 8 8" /></svg>
+          <svg class="benchmark-arrow benchmark-reference-arrow" viewBox="0 0 32 20" aria-hidden="true"><path d="M2 10h27M21 2l8 8-8 8" /></svg>
+          <div class="benchmark-reference-view">
             <div class="media-label reference-label">Reference view</div>
-            <video id="benchmark-reference" muted playsinline preload="none" width="640" height="480" poster="assets/persistbench/benchmark/reference.jpg" aria-label="Synchronized reference crop that keeps the person visible"><source src="assets/persistbench/benchmark/reference.mp4" type="video/mp4"></video>
+            <video id="benchmark-reference" muted playsinline preload="metadata" width="640" height="480" poster="assets/persistbench/benchmark/reference.jpg" aria-label="Synchronized reference crop that keeps the person visible"><source src="assets/persistbench/benchmark/reference.mp4" type="video/mp4"></video>
           </div>
         </div>
         <div class="media-playback" id="benchmark-controls" hidden>
           <button type="button" id="benchmark-play">Play</button>
-          <input id="benchmark-scrub" type="range" min="0" max="75" value="0" step="1" aria-label="Scrub the synchronized dataset views">
+          <input id="benchmark-scrub" type="range" min="0" max="75" value="0" step="1" aria-label="Slide the synchronized dataset views across time">
           <span id="benchmark-state">Target visible in input</span>
         </div>
         <figcaption class="figure-caption">Follow the person in the white T-shirt and red cap. The blue and red outlines mark two crops of the same moment in the 360° recording. When the person leaves the blue input view, the red reference view still records their position, motion, and appearance.</figcaption>
@@ -152,7 +165,7 @@
       </figure>
       <div class="section">
         <p>The model receives only the input video. We then query it with the reference camera trajectory and compare its predictions with the real reference, measuring object permanence, motion continuity, and appearance preservation separately for visible and invisible segments.</p>
-        <p>PersistBench contains <strong>2,000 paired evaluation sequences</strong>: 1,000 with static objects and 1,000 with dynamic objects, spanning ten object categories. We curate these pairs from 24,000 candidate clips from <a href="#ref-76">360-1M</a> using camera pose estimation, object tracking, and constrained trajectory optimization, and evaluate 12 models across three families.</p>
+        <p>PersistBench contains <strong>2,000 paired evaluation sequences</strong>: 1,000 with static objects and 1,000 with dynamic objects, spanning ten object categories. We curate these pairs from clips in <a href="#ref-76">360-1M</a> using camera pose estimation, object tracking, and constrained trajectory optimization, and evaluate 12 models across three families. While 2,000 pairs provide sufficient coverage for our evaluation, the same pipeline can scale to many more videos, supporting training data generation.</p>
       </div>
     </section>
 
@@ -195,15 +208,15 @@
 
     <section id="visualizations">
       <h2 class="tagline">Visualizations.</h2>
-      <p class="section-intro">Compare what each model predicts with what actually happens. Choose a scene, play or scrub the aligned views, and inspect the object masks to see where memory succeeds or fails.</p>
+      <p class="section-intro">Compare what each model predicts with what actually happens. Choose a scene, then play the videos or slide the time-aligned views across time. Turn on the object masks to see where memory succeeds or fails.</p>
       <div class="comparison-browser" id="comparison-browser">
         <div class="comparison-controls" id="comparison-controls" hidden>
           <label>Subset <select id="comparison-subset" aria-label="Comparison subset"></select></label>
           <label class="case-control">Scene <select id="comparison-case" aria-label="Comparison scene"></select></label>
-          <label>Rank by <select id="comparison-sort"><option value="object_permanence">Permanence</option><option value="motion_continuity">Continuity</option><option value="appearance_preservation">Appearance</option></select></label>
+          <label>Show metric <select id="comparison-sort"><option value="object_permanence">Permanence</option><option value="motion_continuity">Continuity</option><option value="appearance_preservation">Appearance</option></select></label>
         </div>
         <div class="comparison-options"><span>Show masks</span><button type="button" id="comparison-reference-mask" aria-pressed="false">Reference</button><button type="button" id="comparison-prediction-mask" aria-pressed="false">Prediction</button></div>
-        <p class="figure-caption comparison-note">Scores describe this example’s invisible segment. Scrub the timeline to inspect any frame.</p>
+        <p class="figure-caption comparison-note">Gray bars show the selected metric at each frame: taller bars mean higher scores, from 0 to 100%. Pale bars indicate unavailable scores. The thin strip above marks the target as visible (blue), invisible (red), or partly visible (gray) in the input. The vertical line marks the current frame. Scores below the videos summarize the invisible segment.</p>
         <p id="comparison-status" class="figure-caption" role="status">Loading comparisons…</p>
         <div id="comparison-methods" class="comparison-methods" role="region" aria-label="Model comparisons" tabindex="0"></div>
         <div class="comparison-pagination" hidden><button id="comparison-previous" type="button">Previous models</button><span id="comparison-page"></span><button id="comparison-next" type="button">Next models</button></div>
@@ -213,14 +226,36 @@
 
     <section id="takeaway">
       <h2 class="tagline">Takeaway.</h2>
-      <blockquote class="attention-block"><p>Seeing is not remembering.</p></blockquote>
+      <blockquote class="attention-block compact"><p>Seeing is not remembering.</p></blockquote>
       <div class="section">
-        <p>Strong reconstruction or novel-view synthesis can coexist with poor retention of objects outside the input field of view.</p>
-        <p><strong>Memory has multiple components.</strong> Permanence and appearance are strongly correlated (r = 0.93), while continuity is less correlated with either (r = 0.34 and 0.54). A single score would hide these differences.</p>
-        <p><strong>Explicit geometric conditioning helps.</strong> Models that project observations into target views before inpainting generally retain objects more effectively. The paper identifies this as a promising direction, alongside memory-aware training data.</p>
-        <p><strong>Static and dynamic memory are related.</strong> Scores across the two subsets are highly correlated, suggesting shared capabilities. Curating dynamic 360° scenes and diverse camera trajectories may help develop these capabilities further.</p>
+        <p>Every model with comparable visible and invisible outputs loses performance once the target leaves view. Strong reconstruction or novel-view synthesis does not imply persistent visual memory. The results suggest that current models still rely heavily on observed inputs rather than maintaining a lasting representation of the world.</p>
+        <p><strong>Explicit conditioning helps visual memory.</strong> <a href="#ref-61">GEN3C</a>, <a href="#ref-90">TrajectoryCrafter</a>, and <a href="#ref-88">NeoVerse</a>, which project input observations into target views before inpainting, generally retain objects more effectively. We hypothesize that this geometric guidance helps compensate for training data in which targets usually remain visible, turning generation into a more constrained refinement task.</p>
+        <p><strong>Memory has multiple components.</strong> Models can preserve motion while losing the object or its identity. <a href="#ref-61">GEN3C</a> and <a href="#ref-86">4DGT</a> both perform well on continuity, but GEN3C preserves object permanence much better. Likewise, <a href="#ref-88">NeoVerse</a> and <a href="#ref-71">Imagine360</a> track dynamics similarly, while NeoVerse better preserves appearance. Permanence and appearance are strongly correlated (r = 0.93); continuity is less correlated with either (r = 0.34 and 0.54). One score cannot capture all three abilities.</p>
+        <p><strong>Static memory predicts dynamic memory.</strong> Models generally remember static objects better, yet their static and dynamic scores are strongly correlated across all three metrics. This suggests shared underlying capabilities, so improving static memory may also benefit dynamic memory.</p>
+        <p><strong>Carefully curated 360° data can improve visual memory.</strong> Panoramic training alone is not enough. <a href="#ref-48">Argus</a> and <a href="#ref-43">CubeComposer</a> perform well on static objects but drop substantially on dynamic ones. Argus, trained with more dynamic scenes and explicit camera noise, achieves the highest static permanence and continuity scores despite its older pretrained backbone. This suggests that dynamic content and diverse camera motion matter, making 360° data valuable for training as well as evaluation.</p>
+        <p>Together, these findings point to two directions: training data with frequent occlusion and reappearance, and architectures that combine explicit geometric conditioning with video generation. Whether the current architectural advantages persist under training designed specifically for memory remains an open question.</p>
       </div>
+      <details class="additional-findings">
+        <summary>Additional findings and validation</summary>
+        <div class="section">
+          <p><strong>Agreement with human judgments.</strong> Across the 12 methods, automatic and human rankings have Spearman correlations of 0.944 for permanence, 0.566 for continuity, and 0.986 for appearance. Agreement is strong for permanence and appearance and moderate for continuity. These values measure agreement between method rankings, not the accuracy of individual scores. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=29">Supplement D.3</a>.</p>
+          <p><strong>Longer sequences remain challenging.</strong> On ten additional dynamic sequences of about 60 seconds, <a href="#ref-86">4DGT</a> reaches 2.69% invisible permanence and 45.32% continuity, compared with 3.89% and 61.12% on the default subset. Its higher appearance score on the longer set comes from only three cases with valid tracked frames, so it does not demonstrate better appearance retention overall. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=31">Supplement E.1</a>.</p>
+          <p><strong>Object categories expose different strengths.</strong> Scores and model rankings vary by category. For example, <a href="#ref-61">GEN3C</a> preserves appearance well across static and dynamic categories, while its continuity ranking varies. Several models track animals less accurately than dynamic decorations. Overall averages therefore hide useful differences. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=31">Supplement E.2</a>.</p>
+          <p><strong>Performance changes gradually within each segment.</strong> Scores generally decrease slightly over time without abrupt changes, and the broad trends remain similar despite some ranking changes. This supports reporting average scores alongside temporal views. Motion continuity stays relatively stable for some models and declines gradually for others, although alternative plausible motions become a greater concern over longer unseen intervals. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=31">Supplement E.3 and E.4</a>.</p>
+          <p><strong>The metric designs capture complementary failures.</strong> Tracking can detect a lost object that a semantic judge confuses with another instance; a semantic judge can reject an unrecognizable shape that tracking still follows. Combining both supports permanence evaluation. For appearance, averaging full-image <a href="#ref-51">DINOv2</a> features within the object mask best separates the high- and low-IoU groups in our ablation. Alternative continuity definitions largely preserve model rankings, while assigning zero to every untracked frame makes continuity more dependent on permanence. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=22">Supplement C.1 to C.4</a>.</p>
+          <p><strong>The main comparisons are robust to evaluation choices.</strong> Model rankings are largely preserved when replacing matching, tracking, judging, and appearance models. Camera perturbations affect continuity more than permanence or appearance, and rankings remain broadly consistent on sequences dominated by camera rotation. Camera handling is therefore a remaining influence, rather than a fully isolated factor. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=25">Supplement C.5 to C.7</a>.</p>
+          <p><strong>Visual memory differs from general video quality.</strong> On a 200-video subset, more than half of the rank correlations between our metrics and six <a href="#ref-17">WorldScore</a> metrics are zero or negative. Object-centric memory evaluation therefore provides information beyond general consistency, dynamics, and visual quality. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=26">Supplement C.8</a>.</p>
+          <p><strong>Reference videos score close to 100%.</strong> Passing real reference videos through the same evaluation pipeline produces near-perfect scores. Small deviations reflect tracking and mask noise, establishing a useful baseline for interpreting model scores. <a href="GuangzhaoProj_PersistBench_NeurIPS26.pdf?v=71d04f843b3c147e#page=29">Supplement C.9 and Table 4</a>.</p>
+        </div>
+      </details>
       <details class="limitations"><summary>Scope and limitations</summary><p>Camera-pose estimation, object matching, tracking, and scoring rely on pretrained models and can introduce errors. The scene distribution reflects the source YouTube 360° videos. Reference-based motion evaluation also has ambiguity: a plausible future need not exactly match the observed reference. See Section 7 and Supplement E.4.</p></details>
+    </section>
+
+    <section id="acknowledgements" aria-labelledby="acknowledgements-title">
+      <h2 class="tagline" id="acknowledgements-title">Acknowledgements.</h2>
+      <div class="section">
+        <p>We thank <a href="https://scholar.google.com/citations?user=JwvnA1gAAAAJ&amp;hl=en" target="_blank" rel="noopener">Tao Tu</a> and <a href="https://mengxuyigit.github.io/" target="_blank" rel="noopener">Xuyi Meng</a> for sharing their data and research, and <a href="https://qianxu.wang/" target="_blank" rel="noopener">Qianxu Wang</a> for being a total badass in the teaser. We also thank <a href="https://www.cs.cornell.edu/~snavely/" target="_blank" rel="noopener">Noah Snavely</a>, <a href="https://www.cs.cornell.edu/~bharathh/" target="_blank" rel="noopener">Bharath Hariharan</a>, <a href="https://yihongsun.github.io/" target="_blank" rel="noopener">Yihong Sun</a>, <a href="https://kwhuang88228.github.io/" target="_blank" rel="noopener">Kuan Wei Huang</a>, <a href="https://justachetan.github.io/" target="_blank" rel="noopener">Aditya Chetan</a>, <a href="https://red-fairy.github.io/" target="_blank" rel="noopener">Rundong Luo</a>, <a href="https://haozheng-yu.github.io/" target="_blank" rel="noopener">Haozheng Yu</a>, and <a href="https://luluzhao.me/" target="_blank" rel="noopener">Lulu Zhao</a> for valuable discussions and constructive feedback.</p>
+      </div>
     </section>
 
     <section id="citation" aria-labelledby="citation-title">
@@ -230,8 +265,9 @@
   title  = {Can {4D} Foundation Models Remember?},
   author = {He, Guangzhao and Averbuch-Elor, Hadar and Ma, Wei-Chiu},
   year   = {2026},
-  note   = {Preprint},
-  url    = {https://guangzhaohe.com/persistbench}
+  eprint = {2609.20819},
+  archivePrefix = {arXiv},
+  url    = {https://arxiv.org/abs/2609.20819}
 }</code></pre>
       </div>
     </section>
@@ -242,6 +278,7 @@
         <li id="ref-4">Bai et al. <a href="https://arxiv.org/abs/2503.11647" target="_blank" rel="noopener">ReCamMaster: Camera-Controlled Generative Rendering from a Single Video.</a> ICCV, 2025.</li>
         <li id="ref-13">Chen, Khurana, and Ramanan. <a href="https://arxiv.org/abs/2507.12646" target="_blank" rel="noopener">Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-view Synthesis from Monocular Videos.</a> NeurIPS, 2025.</li>
         <li id="ref-14">Chen et al. <a href="https://arxiv.org/abs/2603.25716" target="_blank" rel="noopener">Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models.</a> 2026.</li>
+        <li id="ref-17">Duan et al. <a href="https://arxiv.org/abs/2504.00983" target="_blank" rel="noopener">WorldScore: A Unified Evaluation Benchmark for World Generation.</a> ICCV, 2025.</li>
         <li id="ref-20">Fang et al. <a href="https://arxiv.org/abs/2506.23513" target="_blank" rel="noopener">ViewPoint: Panoramic Video Generation with Pretrained Diffusion Models.</a> NeurIPS, 2025.</li>
         <li id="ref-43">Li et al. <a href="https://arxiv.org/abs/2603.04291" target="_blank" rel="noopener">CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video.</a> CVPR, 2026.</li>
         <li id="ref-48">Luo et al. <a href="https://arxiv.org/abs/2504.07940" target="_blank" rel="noopener">Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos.</a> ICCV, 2025.</li>
