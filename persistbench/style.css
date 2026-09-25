@@ -109,6 +109,14 @@ body {
     font-size: 16px;   
     color: #111;      
 }
+.authors .venue {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #111;
+}
+.authors .venue strong {
+    color: #a95745;
+}
 /* Style for links within the authors block */
 .authors a {
     color: inherit; /* Inherit the color from the .authors class */
