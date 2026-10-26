@@ -1,0 +1,6 @@
+Edited with the built-in image-generation tool.
+Source image: agent-supervision-sources.png
+
+Use case: precise-object-edit.
+Edit the supplied diagram. Remove ONLY the large top title "More information, richer supervision" and fill its former area with the same warm near-white background.
+Preserve the original 1536 by 1024 canvas and EVERY other element exactly: all source groups, labels, small illustrations, arrows, colors, line weights, positions, typography, the Agent hub and its Gather/Test/Refine cycle, Supervision cards and Specialized model block. Do not redraw, rearrange, crop, resize, simplify, or change any remaining content. Leave the title area as clean empty background. No replacement title, watermark or credits in the image; the webpage caption will contain the credit.

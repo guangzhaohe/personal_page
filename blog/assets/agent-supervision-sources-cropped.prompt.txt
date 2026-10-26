@@ -1,0 +1,6 @@
+Edited with the built-in image-generation tool.
+Source image: agent-supervision-sources-no-title.png
+
+Use case: precise-object-edit. CROP ONLY.
+Remove the blank outer margins on ALL FOUR SIDES of the supplied 1536x1024 diagram. Crop tightly around the existing outermost rounded diagram boxes, preserving their complete outlines with only about 4 pixels of breathing room. In source-image coordinates, the desired crop rectangle is approximately x=28, y=94, right=1512, bottom=976. The resulting image should have approximately a 1.68:1 landscape aspect ratio (1484x882), with no large empty strip above or below.
+Keep ALL diagram content, text, typography, colors, arrows, illustrations, relative positions, and internal whitespace completely unchanged. Do not redraw, rearrange, regenerate, or add anything. Do not crop any letters or rounded-box outlines. Do not add a title. The only requested change is trimming the external near-white border.

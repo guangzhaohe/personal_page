@@ -1,0 +1,21 @@
+Generated with the built-in image-generation tool.
+
+Use case: infographic-diagram.
+Asset type: a publication-quality explanatory figure embedded in a personal research blog about agentic vision and robotics.
+Primary request: show that agents expand the range of information from which supervision can be derived, combining existing data with external knowledge, tools, experiments and interaction, then turning these into supervision for fast specialized models. This is a conceptual diagram, not a performance comparison.
+
+Create a polished landscape scientific illustration, approximately 3:2 aspect ratio, high resolution. Warm near-white background matching paper (#fcfaf5), charcoal text, restrained muted blue, sage and amber accents. Flat precise editorial line art with a few gently shaded miniature scenes, consistent stroke weights, generous whitespace, clear visual hierarchy. Readable at 760px wide, detailed when opened full size. No photographic people, no robot mascot, no giant brain, no neon, no watermark.
+
+Layout: left 45% of image is a carefully organized information-source field; central 25% is an agent hub; right 30% is a clear vertical pipeline from supervision to a specialized model. All arrows run left-to-right, except a small iterative loop inside the agent hub. Major labels are large and crisp. Use many small illustrative details INSIDE the source cards, but keep arrows and text uncluttered. Information sources must converge onto the agent, then flow into supervision, then into the specialized model. Do NOT show direct external information access at deployment.
+
+Left information field: two tidy groups.
+1. A smaller pale gray group titled exactly "Existing data", containing three miniature labeled tiles: "Images & labels" (a landscape thumbnail and segmentation outlines), "Sensor measurements" (a camera, a point cloud and a range ruler), "Geometry" (a wireframe cube, camera rays and coordinate axes).
+2. A larger softly outlined group titled exactly "Expanded sources", containing four miniature labeled tiles: "Web & knowledge" (a search window, map pin, open book, object with dimension arrows); "Code & tools" (a compact terminal, geometric calculator, tool icons); "Simulation" (tiny robot gripper reaching toward a cube, a scene grid, a trajectory); "Interaction" (a real-world object, a small action sequence and feedback checkmarks). These tiny secondary details should be tasteful, recognizable and subordinate to their labels.
+Both groups feed into the agent.
+
+Middle hub: clean rounded rectangle labeled exactly "Agent". Inside, a small cyclical arrow connecting three short verbs, exactly "Gather", "Test", "Refine". At the bottom inside the hub, small secondary text exactly "Knowledge + tools + reasoning". Give this hub a subtle blue accent. Keep it technical and conceptual, not anthropomorphic.
+
+Right top: a compact stack of clean data cards labeled exactly "Supervision". Three short rows beneath this heading, exactly "Labels", "Trajectories", "Scene representations", with corresponding mini icons: a labeled image patch, action waypoint sequence, and a tiny 3D scene graph. A downward arrow labeled exactly "Train" leads to a compact model block titled exactly "Specialized model". Beneath this block, a short subtitle exactly "Fast inference". At the bottom of the block, three simple output icons showing a depth map, robotic grasp and reconstructed house, without extra text.
+
+At top, one modest title exactly "More information, richer supervision".
+No other prose, numbers or claims. All the required labels should be spelled correctly. Ensure spacious margins, no overlapping text, and clear separation between the source groups, agent hub, and training pipeline. The diagram should explain the concept at a glance while rewarding close inspection of the many small source-side details.
