@@ -28,6 +28,14 @@ From the repository root, run `python3 -m http.server 8000`, then visit `http://
 
 While previewing on localhost, saving a post's Markdown or `posts.json` updates the visible page automatically within about a second. The preview preserves your scroll position and day/night theme. It pauses checks in background tabs, catches up when you return, and keeps the last good content if a save briefly produces invalid JSON or a failed request. This automatic preview is local only; the public website still updates through deployment.
 
+## Visit counts
+
+The blog uses the existing [GoatCounter dashboard](https://alexhe.goatcounter.com/) shared with PersistBench, through its [tracking pixel API](https://www.goatcounter.com/help/pixel). No analytics script is loaded. Sign in and filter paths by `/blog/` to see blog traffic. The index is recorded as `/blog/`; each article is recorded as `/blog/?post=its-slug`, with its article title. GoatCounter reports pageviews and estimated unique visitors; these are not an exact count of individual people.
+
+Tracking runs invisibly once after a successful page load on `https://www.guangzhaohe.com` or `https://guangzhaohe.com`. Local previews, failed article loads, citation jumps, theme changes, and preview refreshes do not add views. Browsers with Do Not Track or Global Privacy Control enabled are excluded, and blockers may also prevent counting. No click events or referrer values are sent, and unrelated query parameters are omitted. GoatCounter uses no tracking cookies; its server processes request metadata to estimate visitors, as described in its [privacy documentation](https://www.goatcounter.com/help/privacy).
+
+Counts start after the change is deployed; past visits cannot be recovered. There is no visitor-facing counter or extra UI.
+
 ## Bundled dependencies
 
 The local scripts and stylesheet in `index.html` use `?v=` content hashes so browsers fetch the matching version after markup changes. After editing one of these assets, update its `?v=` value to the first 12 characters of its SHA-256 hash (for example, `shasum -a 256 blog/blog.js`).

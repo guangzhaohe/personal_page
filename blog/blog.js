@@ -12,8 +12,37 @@
   let refreshing = false;
   let refreshTimer;
   let lastError = '';
+  let analyticsStarted = false;
+  let analyticsPixel;
   let twitterReady;
   let tweetRevision = 0;
+
+  function trackBlogView(post = null) {
+    // Count successful public page loads once, not local previews or live refreshes.
+    if (analyticsStarted || window.location.protocol !== 'https:' ||
+        !['www.guangzhaohe.com', 'guangzhaohe.com'].includes(window.location.hostname) ||
+        navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true ||
+        window.self !== window.top) return;
+    try {
+      if (localStorage.getItem('skipgc') === 't') return;
+    } catch { /* Counting does not require browser storage. */ }
+    if (document.prerendering) {
+      document.addEventListener('prerenderingchange', () => trackBlogView(post), { once: true });
+      return;
+    }
+    analyticsStarted = true;
+    // GoatCounter's documented pixel API avoids loading a third-party script.
+    const params = new URLSearchParams({
+      // Only the known article slug is sent; exclude unrelated query strings and hashes.
+      p: post ? `/blog/?post=${encodeURIComponent(post.slug)}` : '/blog/',
+      t: post ? post.title : 'Guangzhao Blogs',
+      rnd: Math.random().toString(36).slice(2),
+    });
+    if (navigator.webdriver) params.set('b', '153');
+    analyticsPixel = new Image(1, 1);
+    analyticsPixel.referrerPolicy = 'no-referrer';
+    analyticsPixel.src = `https://alexhe.goatcounter.com/count?${params}`;
+  }
 
   function loadTwitter() {
     if (window.twttr?.widgets?.createTweet) return Promise.resolve(window.twttr);
@@ -119,6 +148,7 @@
     get('error-state').hidden = true;
     get('blog-article').hidden = true;
     get('blog-index').hidden = false;
+    trackBlogView();
   }
 
   function renderArticle(post, markdown) {
@@ -152,6 +182,7 @@
     get('error-state').hidden = true;
     get('blog-article').hidden = false;
     renderTweets();
+    trackBlogView(post);
   }
 
   get('copy-link').addEventListener('click', async () => {

@@ -121,3 +121,20 @@ The learning can even go both ways. Agents can help us build better specialized 
 5. <span id="ref-5"></span> Max Fu et al. [CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://arxiv.org/abs/2603.22435). 2026.
 6. <span id="ref-6"></span> Andrej Karpathy. [Post on generating a Lord of the Rings 3D animation with Opus 5](https://x.com/karpathy/status/2083749667410727319). August 2, 2026. [Interactive animation](https://karpathy.ai/lotr-movie/).
 7. <span id="ref-7"></span> Xingjian Bai, Jia-Hao Liang, Jayden Teoh, and Vincent Sitzmann. [Reactive Optimizers](https://xingjianbai.com/reactive-optimizers/). October 2026. [OPAL implementation and runtime measurements](https://github.com/xingjian-bai/opal).
+
+## Acknowledgments
+
+I'm grateful to the following people (listed alphabetically by last name) for the discussions at our group meeting that helped shape the ideas in this post: [Aditya Chetan](https://justachetan.github.io/), [Bharath Hariharan](https://www.cs.cornell.edu/~bharathh/), [Gemmechu Hassena](https://gemmechu.github.io/), [Kuan Wei Huang](https://kwhuang88228.github.io/), [Chia-Hsiang Kao](https://iandrover.github.io/), [Rundong Luo](https://red-fairy.github.io/), [Wei-Chiu Ma](https://www.cs.cornell.edu/~weichiu/), [Chuanruo Ning](https://tritiumr.github.io/), [Tao Tu](https://www.cs.cornell.edu/people/tao-tu), [James Wu](https://www.cs.cornell.edu/people/james-wu), and [Haozheng Yu](https://haozheng-yu.github.io/).
+
+## Cite this post
+
+```bibtex
+@misc{he2026agenticvision,
+  author = {He, Guangzhao},
+  title = {A New Era for Agentic Vision and Robotics Research},
+  year = {2026},
+  month = oct,
+  howpublished = {Guangzhao Blogs},
+  url = {https://www.guangzhaohe.com/blog/?post=a-new-era-for-agentic-vision-and-robotics-research}
+}
+```
