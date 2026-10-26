@@ -1,0 +1,20 @@
+Generated with the built-in ChatGPT Images tool.
+
+Use case: infographic-diagram.
+Asset type: a polished scientific illustration for a personal research blog about agentic vision and robotics, readable at 760 CSS pixels wide and detailed when opened full size.
+Primary request: clearly connect three ideas: agents tackle previously impractical new tasks; agents generate supervision to train specialized tools; experience from using those tools can be distilled back into the underlying agent model. This is a proposed research loop, not a claim of measured performance.
+
+Create a landscape 3:2 diagram with a near-white warm paper background (#fcfaf5), dark charcoal typography, muted blue, sage green and warm amber accents. Precise clean arrows, restrained soft shading, elegant thin outlines, detailed miniature scientific illustrations. Use a clean humanist sans-serif similar to Linux Biolinum, NOT serif. No overall title. Tight but comfortable outer margins (about 3%); no large unused white border. All text must be large and legible, especially arrow labels. Keep illustrations subordinate to the graph.
+
+EXACT COMPOSITION: three large rounded panels arranged in a triangle.
+TOP CENTER panel, amber accent, titled "New tasks"; smaller line "Previously impractical". Inside are two miniature illustrations side by side: a richly customized 3D virtual world with tiny houses, trees, terrain, a movie camera and a timeline; and an experiment workstation with tiny training curves, a robot arm and sequential test results. Tiny details inside illustrations but NO extra text.
+LOWER LEFT panel, blue accent, titled "Agent"; smaller line "Reason · Act · Learn". Inside show an elegant technical model block linked to a plan sheet, a code window and a small observation thumbnail, with small internal cycle arrows. No anthropomorphic robot face or brain.
+LOWER RIGHT panel, sage green accent, titled "Specialized tools"; smaller line "Fast vision & robot models". Inside show three small meaningful vignettes: a colorful depth-map image, a robot gripper with an object, and an editable wireframe 3D room. Below the miniatures, a small neural-network/model block ties them together.
+
+EXACT GRAPH, four directional arrows only outside the panels:
+1. Agent upper edge to New tasks left edge: upward/right blue arrow, label "Explore & iterate".
+2. New tasks right edge to Specialized tools upper edge: downward/right amber arrow, label split on two lines "Successful solutions" and "→ training data".
+3. Agent right edge to Specialized tools left edge: right-facing blue arrow through the open horizontal gap, label "Generate supervision". This arrow represents training tools from agent-produced data.
+4. Specialized tools bottom edge back to Agent bottom edge: large smooth green U-shaped return arrow routed below both lower panels; clear arrowhead ENTERS the Agent at its bottom edge. Above the horizontal portion of this bottom return arc, centered two-line label "Tool-use experience" and "→ train the agent". This return arrow MUST point from tools toward the agent, not the other way round. It represents learning from interactions with tools, not automatic weight transfer from a tool.
+
+Allocate sufficient vertical space for the bottom return loop and its label without touching any panel. Give each arrow label dedicated unobstructed space. Arrowheads stop precisely at panel boundaries and do not overlap text. Use restrained consistent stroke widths and obvious direction. No crossing arrows, no decorative arrows, no extra nodes, no overall title, no footer or caption baked into image, no logo, no watermark. The finished figure should convey an intelligible two-way learning loop, with new capabilities at the top.
