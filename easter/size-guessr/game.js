@@ -271,6 +271,30 @@
     setTimeout(() => { box.innerHTML = ''; }, 5600);
   }
 
+  /* ------------------------------------------------------------ share: native share sheet, else copy to clipboard */
+  const SITE = 'https://guangzhaohe.com/easter/size-guessr/';
+  function shareText() {
+    const s = S.score, n = S.log.length;
+    const grid = S.log.map((r) => (r.winners.includes('you') ? '🟧' : '⬜')).join('');
+    const rows = grid.match(/(?:🟧|⬜){1,10}/gu) || [];
+    const verdict = s.you > Math.max(s.a, s.b) ? 'I beat both methods' : s.you === Math.max(s.a, s.b) ? 'I tied the methods' : 'The methods beat me';
+    return `📏 Size Guessr: ${verdict}!\nYou ${s.you}/${n} · Method A ${s.a} · Method B ${s.b}\n${rows.slice(0, 3).join('\n')}${rows.length > 3 ? '\n…' : ''}\nCan you beat them? ${SITE}`;
+  }
+  let toastT;
+  function toast(msg) { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200); }
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); return true; } catch (e) { /* fall through */ }
+    const ta = el('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0'; document.body.append(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) { /* ignore */ } ta.remove(); return ok;
+  }
+  document.querySelectorAll('.share').forEach((b) => b.addEventListener('click', async () => {
+    const text = shareText();
+    if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+      try { await navigator.share({ title: 'Size Guessr', text }); return; } catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    toast((await copy(text)) ? 'Result copied, paste it anywhere' : 'Could not copy, sorry');
+  }));
+
   $('again').addEventListener('click', () => { $('roundtag').textContent = ''; show('menu'); });
 
   show('menu');

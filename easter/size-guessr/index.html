@@ -82,7 +82,10 @@
         <div class="rsub" id="rsub"></div>
         <div class="board big-board" id="board2"></div>
         <div class="rstats" id="rstats"></div>
-        <button class="btn primary" id="again">Play again</button>
+        <div class="endbtns">
+          <button class="btn secondary share" type="button">Share</button>
+          <button class="btn primary" id="again">Play again</button>
+        </div>
       </section>
 
       <footer class="foot">Ground truth comes from depth sensors. Methods A and B see only the photo.</footer>
@@ -94,9 +97,13 @@
 <div id="wasted" aria-live="assertive" hidden>
   <div class="band"><div class="word">WASTED</div></div>
   <div class="wsub" id="wsub"></div>
-  <button class="btn ghost" id="retry">Try again</button>
+  <div class="endbtns">
+    <button class="btn ghost share" type="button">Share</button>
+    <button class="btn ghost" id="retry">Try again</button>
+  </div>
 </div>
 <div id="confetti" aria-hidden="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="questions.js"></script>
 <script src="game.js"></script>
