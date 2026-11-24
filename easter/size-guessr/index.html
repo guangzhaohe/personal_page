@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Size Guessr</title>
+<meta name="description" content="Guess how big things are from a single photo, and try to beat two metric depth methods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true">
+  <div id="bgcam">
+    <div id="world">
+      <div class="wall" id="wall"></div>
+      <div class="floor"></div>
+    </div>
+  </div>
+</div>
+<div id="viewport">
+  <div id="cam">
+
+    <div id="deck">
+      <div class="glare"></div>
+
+      <header class="top">
+        <div class="brand"><span class="logo"><i></i></span>Size Guessr</div>
+        <div class="roundtag" id="roundtag"></div>
+      </header>
+
+      <!-- menu -->
+      <section class="screen menu" id="menu">
+        <h1>How big is it, <em>really?</em></h1>
+        <p class="lede">You get one photo and one ruler. Guess its real length. Two methods from our upcoming work guess too,
+          and the guess closest to the measured truth takes the round.</p>
+        <div class="versus">
+          <div class="vs-card c-you"><b>You</b><span>eyes and intuition</span></div>
+          <div class="vs-x">vs</div>
+          <div class="vs-card c-a"><b>Method A</b><span>one photo in, metres out</span></div>
+          <div class="vs-card c-b"><b>Method B</b><span>one photo in, metres out</span></div>
+        </div>
+        <div class="pick">
+          <div class="pick-label">Rounds</div>
+          <div class="seg" id="seg" role="radiogroup" aria-label="Number of rounds">
+            <span class="seg-thumb"></span>
+          </div>
+        </div>
+        <button class="btn primary" id="start">Start</button>
+        <div class="preload" id="preload"><i></i></div>
+      </section>
+
+      <!-- play -->
+      <section class="screen play" id="play" hidden>
+        <div class="board" id="board"></div>
+        <div class="playgrid">
+          <div class="stage" id="stage">
+            <img id="imgA" alt="" draggable="false">
+            <img id="imgB" alt="" draggable="false">
+            <svg id="ruler" viewBox="0 0 960 640" preserveAspectRatio="none"></svg>
+            <div class="tag" id="dstag"></div>
+          </div>
+          <div class="ctl">
+            <h2 id="q"></h2>
+            <div class="big" id="val"></div>
+            <input type="range" id="slider" min="0" max="1000" value="500" aria-label="Your guess">
+            <div class="scale"><span>1 cm</span><span>30 m</span></div>
+            <button class="btn primary" id="go">Lock in</button>
+            <div class="ans" id="ans"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- result -->
+      <section class="screen result" id="result" hidden>
+        <div class="rtitle" id="rtitle"></div>
+        <div class="rsub" id="rsub"></div>
+        <div class="board big-board" id="board2"></div>
+        <div class="rstats" id="rstats"></div>
+        <button class="btn primary" id="again">Play again</button>
+      </section>
+
+      <footer class="foot">Ground truth comes from depth sensors. Methods A and B see only the photo.</footer>
+    </div>
+  </div>
+</div>
+
+<!-- failure sequence -->
+<div id="wasted" aria-live="assertive" hidden>
+  <div class="band"><div class="word">WASTED</div></div>
+  <div class="wsub" id="wsub"></div>
+  <button class="btn ghost" id="retry">Try again</button>
+</div>
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="questions.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
