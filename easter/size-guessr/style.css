@@ -23,7 +23,7 @@ button { font: inherit; color: inherit; }
 #bg { position: fixed; inset: 0; perspective: 1300px; perspective-origin: 50% 45%; overflow: hidden; pointer-events: none; transition: filter .6s; }
 #bgcam { position: absolute; inset: 0; transform-style: preserve-3d; }
 #viewport { position: fixed; inset: 0; perspective: 1300px; perspective-origin: 50% 45%; overflow-x: hidden; overflow-y: auto; }
-#cam { position: relative; min-height: 100%; transform-style: preserve-3d; display: grid; place-items: center; padding: 28px 16px; }
+#cam { position: relative; min-height: 100%; transform-style: preserve-3d; display: grid; place-items: center; padding: 28px 16px; pointer-events: none; }
 
 #world { position: absolute; inset: 0; transform-style: preserve-3d; }
 #world .wall { position: absolute; left: 50%; top: 50%; width: 4400px; height: 2300px; margin: -1150px 0 0 -2200px;
@@ -41,7 +41,7 @@ button { font: inherit; color: inherit; }
 #deck { position: relative; width: min(1160px, 100%); border-radius: 30px; padding: 18px 22px 14px;
   background: rgba(255, 255, 255, .62); -webkit-backdrop-filter: blur(26px) saturate(1.7); backdrop-filter: blur(26px) saturate(1.7);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 0 0 1px rgba(255, 255, 255, .55), 0 40px 80px -20px rgba(31, 41, 55, .35), 0 12px 30px rgba(31, 41, 55, .12);
-  transform-style: preserve-3d; will-change: transform; }
+  transform-style: flat; will-change: transform; pointer-events: auto; }
 #deck .glare { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; mix-blend-mode: soft-light;
   background: radial-gradient(600px 400px at var(--gx, 30%) var(--gy, 0%), rgba(255, 255, 255, .9), transparent 60%); }
 
@@ -86,9 +86,17 @@ button { font: inherit; color: inherit; }
 .seg-thumb { position: absolute; top: 5px; bottom: 5px; left: 0; width: 0; border-radius: 999px; background: rgba(255, 255, 255, .92);
   box-shadow: inset 0 1px 1px #fff, 0 3px 10px rgba(31, 41, 55, .15), 0 0 0 .5px rgba(31, 41, 55, .06);
   transition: left .45s cubic-bezier(.3, 1.5, .5, 1), width .45s cubic-bezier(.3, 1.5, .5, 1); }
-.preload { width: 220px; height: 4px; margin: 18px auto 0; border-radius: 4px; background: rgba(120, 130, 150, .15); overflow: hidden; transition: opacity .6s; }
-.preload i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), var(--purple)); transition: width .2s; }
-.preload.done { opacity: 0; }
+/* loader: nothing shows until every image and font is in */
+#loader { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  transition: opacity .6s, visibility .6s; }
+#loader .brand { font-size: 26px; }
+#loader .lbar { width: min(320px, 70vw); height: 8px; border-radius: 8px; background: rgba(120, 130, 150, .18); overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(31, 41, 55, .12); }
+#loader .lbar i { display: block; height: 100%; width: 0; border-radius: 8px; background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink)); transition: width .25s ease-out; }
+#loader .lpct { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+body.loading #bg, body.loading #viewport { opacity: 0; visibility: hidden; }
+#bg, #viewport { transition: opacity .8s ease-out; }
+body:not(.loading) #loader { opacity: 0; visibility: hidden; pointer-events: none; }
 
 /* ------------------------------------------------------------------ play */
 .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
@@ -102,7 +110,7 @@ button { font: inherit; color: inherit; }
 
 .playgrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: start; }
 .stage { position: relative; aspect-ratio: 3 / 2; border-radius: 20px; overflow: hidden; background: #dfe3ea;
-  box-shadow: 0 18px 40px -12px rgba(31, 41, 55, .45); transform: translateZ(30px); }
+  box-shadow: 0 18px 40px -12px rgba(31, 41, 55, .45); }
 .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .35s; user-select: none; }
 .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .stage .tag { position: absolute; left: 12px; bottom: 12px; padding: 3px 12px; border-radius: 999px; font-size: 13px; color: #fff;
@@ -117,7 +125,7 @@ button { font: inherit; color: inherit; }
 .gt-label { animation: rise .4s ease-out; }
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
 
-.ctl { padding: 16px 18px; border-radius: 22px; background: rgba(255, 255, 255, .6); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8), 0 8px 24px rgba(31, 41, 55, .08); transform: translateZ(18px); }
+.ctl { padding: 16px 18px; border-radius: 22px; background: rgba(255, 255, 255, .6); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .8), 0 8px 24px rgba(31, 41, 55, .08); }
 .ctl h2 { font-size: 24px; margin: 0 0 2px; line-height: 1.2; }
 .big { font-size: 44px; font-weight: 700; color: var(--you); font-variant-numeric: tabular-nums; line-height: 1.2; }
 input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 30px; background: none; cursor: pointer; margin: 4px 0 0; }

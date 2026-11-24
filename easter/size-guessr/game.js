@@ -65,7 +65,7 @@
   // background wall of photos from the deck
   const wall = $('wall');
   const shuffled = (a, r = Math.random) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-  const wq = shuffled(Q); for (let k = 0; k < 16 * 7; k++) { const i = el('i'); i.style.backgroundImage = `url(${wq[k % wq.length].img})`; wall.append(i); }
+  
 
   /* ------------------------------------------------------------ menu: rounds picker (sliding glass thumb) */
   const seg = $('seg'), thumb = seg.querySelector('.seg-thumb');
@@ -86,9 +86,18 @@
   }
   addEventListener('resize', syncSeg);
 
-  // start preloading the whole bank right away (about 3 MB); the start button waits only for the chosen deck
-  const bar = $('preload');
-  preloadAll(Q, (f) => { bar.firstElementChild.style.width = (f * 100).toFixed(0) + '%'; if (f >= 1) bar.classList.add('done'); });
+  // load every image (about 3 MB) and the fonts before showing anything
+  const fill = $('lfill'), pct = $('lpct'), loader = $('loader');
+  let fontsDone = false, imgFrac = 0;
+  const paint = () => { const f = imgFrac * 0.95 + (fontsDone ? 0.05 : 0); fill.style.width = (f * 100).toFixed(1) + '%';
+    pct.textContent = Math.floor(f * 100) + '%'; loader.setAttribute('aria-valuenow', Math.floor(f * 100)); };
+  const fonts = (document.fonts && document.fonts.ready ? Promise.all([document.fonts.load('700 20px Biolinum'), document.fonts.load('400 20px Biolinum'),
+    document.fonts.load('40px Anton')]).catch(() => {}) : Promise.resolve()).then(() => { fontsDone = true; paint(); });
+  const ready = Promise.all([preloadAll(Q, (f) => { imgFrac = f; paint(); }), fonts]).then(() => {
+    const wq = shuffled(Q);
+    for (let k = 0; k < 16 * 7; k++) { const i = el('i'); i.style.backgroundImage = `url(${wq[k % wq.length].img})`; wall.append(i); }
+    return new Promise((r) => setTimeout(r, 250));
+  }).then(() => { document.body.classList.remove('loading'); requestAnimationFrame(syncSeg); });
 
   /* ------------------------------------------------------------ game */
   const S = { deck: [], k: 0, score: null, revealed: false, guess: 1, log: [] };

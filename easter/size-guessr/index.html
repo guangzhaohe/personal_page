@@ -10,7 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
+<div id="loader" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100">
+  <div class="brand"><span class="logo"><i></i></span>Size Guessr</div>
+  <div class="lbar"><i id="lfill"></i></div>
+  <div class="lpct" id="lpct">0%</div>
+</div>
 <div id="bg" aria-hidden="true">
   <div id="bgcam">
     <div id="world">
@@ -48,7 +53,6 @@
           </div>
         </div>
         <button class="btn primary" id="start">Start</button>
-        <div class="preload" id="preload"><i></i></div>
       </section>
 
       <!-- play -->
